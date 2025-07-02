@@ -76,7 +76,7 @@ class S3Upload_FileHandler
                     'size'      => $result['size'],
                     'type'      => $result['type'],
                     'mime'      => $result['mime'],
-                    'extension' => $result['extension'],
+                    'extension' => @$result['extension'],
                     'created'   => time(),
                     'attachment'=> (object)['path' => $result['path']],
                     'isImage'   => self::isImage($result['mime']),
