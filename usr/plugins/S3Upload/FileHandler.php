@@ -58,7 +58,6 @@ class S3Upload_FileHandler
             $uploader = new S3Upload_StreamUploader();
             $result = $uploader->handleUpload($file);
 
-            var_dump($result);exit;
 
             if ($tempFile && file_exists($tempFile)) {
                 @unlink($tempFile);
@@ -78,7 +77,7 @@ class S3Upload_FileHandler
                     'size'      => $result['size'],
                     'type'      => $result['type'],
                     'mime'      => $result['mime'],
-                    'extension' => $result['extension'],
+                  //  'extension' => $result['extension'],
                     'created'   => time(),
                     'attachment'=> (object)['path' => $result['path']],
                     'isImage'   => self::isImage($result['mime']),
